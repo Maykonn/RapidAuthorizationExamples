@@ -4,20 +4,21 @@
  * Working with Tasks - Basic
  * @author Maykonn Welington Candido<maykonn@outlook.com>
  */
-$sep = DIRECTORY_SEPARATOR;
-require_once '..' . $sep . 'RapidAuthorization.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use RapidAuthorization\RapidAuthorization;
 
 $configuration = Array(
-    'mysqlHost' => 'localhost',
-    'mysqlPort' => 3306,
-    'mysqlUser' => 'root',
-    'mysqlPass' => '',
-    'dbName' => 'rapid_authorization',
-    'userTable' => 'user_table',
-    'userTablePK' => 'user_pk',
-    'useRapidAuthorizationAutoload' => true
+	'mysqlHost' => 'localhost',
+	'mysqlPort' => 3306,
+	'mysqlUser' => 'root',
+	'mysqlPass' => '123456',
+	'dbName' => 'test_rbac',
+	'dbCharset' => 'utf8', // optional param, default is utf8
+	'userTable' => 'users', // optional param if is different of user, default is user
+	'userTablePK' => 'id', // optional param if is different of id, default is id
+	'autoGenerateTables' => true, // optional param, default is false
+	//'useRapidAuthorizationAutoload' => true // optional param, default is false
 );
 
 $authorization = new RapidAuthorization($configuration);

@@ -4,20 +4,21 @@
  * Working with Roles - Basic
  * @author Maykonn Welington Candido<maykonn@outlook.com>
  */
-$sep = DIRECTORY_SEPARATOR;
-require_once '..' . $sep . 'RapidAuthorization.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use RapidAuthorization\RapidAuthorization;
 
 $configuration = Array(
-    'mysqlHost' => 'localhost',
-    'mysqlPort' => 3306,
-    'mysqlUser' => 'root',
-    'mysqlPass' => '',
-    'dbName' => 'rapid_authorization',
-    'userTable' => 'user_table',
-    'userTablePK' => 'user_pk',
-    'useRapidAuthorizationAutoload' => true
+	'mysqlHost' => 'localhost',
+	'mysqlPort' => 3306,
+	'mysqlUser' => 'root',
+	'mysqlPass' => '123456',
+	'dbName' => 'test_rbac',
+	'dbCharset' => 'utf8', // optional param, default is utf8
+	'userTable' => 'users', // optional param if is different of user, default is user
+	'userTablePK' => 'id', // optional param if is different of id, default is id
+	'autoGenerateTables' => true, // optional param, default is false
+	//'useRapidAuthorizationAutoload' => true // optional param, default is false
 );
 
 $authorization = new RapidAuthorization($configuration);
@@ -26,8 +27,10 @@ $authorization = new RapidAuthorization($configuration);
 echo 'CREATED ROLEs: #';
 echo $authorization->role()->create('Administrator', null, 'Optional description of Role') . ' - ';
 echo $authorization->role()->create('Tester', 'TESTER', 'QA Tester') . ' - ';
-echo $idToDelete = $authorization->role()->create('Testers', 'tester', 'Will be deleted') . ' - ';
-echo $idToUpdate = $authorization->role()->create('Seller', null, 'Will be updated to NULL') . '<br>';
+echo $idToDelete = $authorization->role()->create('Testers', 'tester', 'Will be deleted');
+echo ' - ';
+echo $idToUpdate = $authorization->role()->create('Seller', null, 'Will be updated to NULL');
+echo '<br>';
 
 
 // Update - if set NULL in description param, the description value will not change
@@ -37,7 +40,8 @@ echo $idFromUpdateRole = $authorization->role()->update($idToUpdate, 'Senior Sel
 
 // Delete
 echo 'DELETED ROLE: #';
-echo $idFromDeletedRole = $authorization->role()->delete($idToDelete) . '<br>';
+echo $idFromDeletedRole = $authorization->role()->delete($idToDelete);
+echo '<br>';
 
 
 // List By ID
@@ -59,4 +63,3 @@ echo 'LISTING ALL ROLEs : <pre>';
 $allRoles = $authorization->role()->findAll();
 print_r($allRoles);
 echo '</pre><br>';
-?>

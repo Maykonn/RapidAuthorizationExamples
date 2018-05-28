@@ -1,0 +1,5 @@
+{
+    "require": {
+        "maykonn/rapid-authorization": "dev-master"
+    }
+}
