@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a5a058b896c77f4449cd0e6f9ffc5d2f",
+    "packages": [
+        {
+            "name": "maykonn/rapid-authorization",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maykonn/RapidAuthorization.git",
+                "reference": "d2d612ca4ab93de86a8478782e86b1f5382c6bb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maykonn/RapidAuthorization/zipball/d2d612ca4ab93de86a8478782e86b1f5382c6bb3",
+                "reference": "d2d612ca4ab93de86a8478782e86b1f5382c6bb3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RapidAuthorization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maykonn Welington Candido",
+                    "email": "maykonn@outlook.com"
+                }
+            ],
+            "description": "RapidAuthorization is a PHP framework for Access Control, based in Role-based Access Control (RBAC)",
+            "homepage": "https://github.com/Maykonn/RapidAuthorization",
+            "keywords": [
+                "Role Based Access Control",
+                "access control",
+                "framework",
+                "php",
+                "rbac",
+                "role-based access control"
+            ],
+            "time": "2018-05-28T19:18:02+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "maykonn/rapid-authorization": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
